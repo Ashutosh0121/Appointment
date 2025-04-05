@@ -2,29 +2,54 @@ import React from 'react'
 import Home from './Home'
 import Book from './pages/Book'
 import View from './pages/View'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import {useNavigate, NavLink, Route, Routes } from 'react-router-dom'
+import Admin from './pages/Admin'
+import Admin_page from './pages/Admin_page'
 
 export default function App() {
-  return (
-   <>
-   <nav>
-   <div className="content">
-    {/* <img src="" alt="" /> */}
-    <ul>
-        <li> <NavLink to="/" >Home</NavLink></li>
-        <li> <NavLink to="/book" >Book Appointment</NavLink></li>
-        <li> <NavLink to="/view" >View list</NavLink></li>
-    </ul>
+    let navigate = useNavigate()
+return (
+    <>
+        <nav>
+            <div className="content">
+                <div className="logo">
+                    <img src="./image/logo.png" alt="" />
+                    {/* <h1>Doctor Appointment</h1> */}
+                </div>
+                <ul>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/book">Book Appointment</NavLink></li>
+                    <li><NavLink to="/view">View List</NavLink></li>
+                </ul>
 
-    <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/book" element={<Book />} />
-        <Route path="/view" element={<View />} />
-      </Routes>
+                <button className='button' onClick={()=> navigate("/admin")} >Addmin log IN</button>
+            </div>
+        </nav>
 
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/book" element={<Book />} />
+            <Route path="/view" element={<View />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/adminpage" element={<Admin_page />} />
+            <Route path="*" element={<h1>404</h1>} />
 
-   </div>
-   </nav>
-   </>
-  )
+        </Routes>
+
+        <section>
+            <div className="content">
+
+                <div className="hero-section grid grid-two">
+                    <div className="text">
+                        {/* Add your text content here */}
+                    </div>
+                    <div className="img">
+                        {/* Add your image content here */}
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </>
+);
 }
