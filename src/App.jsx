@@ -5,27 +5,15 @@ import View from './pages/View'
 import {useNavigate, NavLink, Route, Routes } from 'react-router-dom'
 import Admin from './pages/Admin'
 import Admin_page from './pages/Admin_page'
+import Nav from './pages/Nav'
+
+
 
 export default function App() {
     let navigate = useNavigate()
 return (
     <>
-        <nav>
-            <div className="content">
-                <div className="logo">
-
-                    <img src="/image/Dr1.png" alt="" />
-                    {/* <h1>Doctor Appointment</h1> */}
-                </div>
-                <ul>
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/book">Book Appointment</NavLink></li>
-                    <li><NavLink to="/view">View List</NavLink></li>
-                </ul>
-
-                <button className='button' onClick={()=> navigate("/admin")} >Admin log IN</button>
-            </div>
-        </nav>
+       <Nav/>
 
         <Routes>
             <Route path="/" element={<Home />} />

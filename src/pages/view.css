@@ -1,49 +1,129 @@
-/* .container {
-    max-width: 900px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-} */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.8rem; /* Increased base font size */
+}
+
+.view-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 h2 {
-    text-align: center;
-    color: #333;
+  text-align: center;
+  color: var(--mainColor);
+  margin-bottom: 20px;
+  font-size: 2.4rem; /* Increased heading font size */
 }
+
+.current-time {
+  font-size: 2rem; /* Increased font size for current time */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.meta-message {
+  font-size: 1.8rem; /* Increased font size for metadata message */
+  text-align: center;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1.8rem; /* Increased table font size */
 }
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+
+table th,
+table td {
+  text-align: left;
+  padding: 12px; /* Adjusted padding for better spacing */
+  border: 1px solid #ddd;
 }
-th {
-    background-color: #007bff;
-    color: white;
+
+table th {
+  background-color: var(--mainColor);
+  color: white;
+  text-align: center;
+  font-size: 2rem; /* Increased font size for table headers */
 }
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
-tr:hover {
-    background-color: #ddd;
+
+table tr:hover {
+  background-color: #f1f1f1;
 }
+
+@media (max-width: 768px) {
+  .view-container {
+    padding: 10px;
+  }
+
+  table {
+    font-size: 1.6rem; /* Adjusted font size for tablets */
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+  }
+
+  .current-time,
+  .meta-message {
+    font-size: 1.6rem; /* Adjusted font size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+    font-size: 1.4rem; /* Adjusted font size for mobile */
+  }
+
+  table th,
+  table td {
+    padding: 8px;
+  }
+
+  h2 {
+    font-size: 2rem; /* Adjusted heading size for mobile */
+  }
+
+  .current-time,
+  .meta-message {
+    font-size: 1.4rem; /* Adjusted font size for mobile */
+  }
+}
+
 .status {
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
 }
+
 .completed {
-    background-color: #28a745;
-    color: white;
+  background-color: #28a745;
+  color: white;
 }
+
 .pending {
-    background-color: #ffc107;
-    color: black;
+  background-color: #ffc107;
+  color: black;
 }
+
 .canceled {
-    background-color: #dc3545;
-    color: white;
+  background-color: #dc3545;
+  color: white;
 }
+
+

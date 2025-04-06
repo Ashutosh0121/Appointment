@@ -23,7 +23,7 @@ export default function Book() {
       axios.post("https://67e6b92e6530dbd311114010.mockapi.io/data/user",formdata).then((res)=>{
         // console.log(res.data);
         
-        navigate("/")  ; 
+        navigate("/view")  ; 
       },(rej)=>rej)
      
     };

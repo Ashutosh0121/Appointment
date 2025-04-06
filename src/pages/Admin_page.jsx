@@ -54,7 +54,7 @@ export default function Admin_page() {
   let baseStartTime = metaData?.start_Time ? new Date(metaData.start_Time) : null;
 
   return (
-    <div className="admin-panel">
+    <div className="admin-panel content">
       <h2>Admin Panel - All Appointments</h2>
       <Admin_Manager />
       <table border="1" cellPadding="10">

@@ -62,15 +62,18 @@ export default function Admin_Manage() {
   };
 
   return (
-    <main className="admin-container">
+    <main className="admin-container content">
       <section className="admin-panel">
-        <header>
-          <h1>Admin Session Manager</h1>
-          <p>Manage session timing and messages (ID: 1)</p>
+        <header className="grid">
+          <p>Manage session timing and messages </p>
         </header>
 
-        <form onSubmit={handleSubmit} className="admin-form">
-          <div className="form-group">
+        <form onSubmit={handleSubmit} className="admin-form ">
+
+          <div className="form_grid">
+
+          {/* <div className="form-group">
+
             <label htmlFor="startTime">Start Time:</label>
             <input
               type="datetime-local"
@@ -79,9 +82,9 @@ export default function Admin_Manage() {
               onChange={handleChange}
               required
             />
-          </div>
+          </div> */}
 
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="endTime">End Time:</label>
             <input
               type="datetime-local"
@@ -90,9 +93,10 @@ export default function Admin_Manage() {
               onChange={handleChange}
               required
             />
-          </div>
-
+          </div> */}
+            <div>
           <div className="form-group">
+
             <label htmlFor="bookStartTime">Booking Start Time:</label>
             <input
               type="datetime-local"
@@ -111,8 +115,12 @@ export default function Admin_Manage() {
               value={sessionData.bookEndTime}
               onChange={handleChange}
               required
-            />
+              />
           </div>
+              </div>
+
+
+          <div>
 
           <div className="form-group">
             <label htmlFor="bookingMessage">Booking Message:</label>
@@ -123,21 +131,21 @@ export default function Admin_Manage() {
               onChange={handleChange}
               placeholder="Enter booking message"
               required
-            />
+              />
           </div>
+                    <div className="form-group">
+                      <label htmlFor="viewMessage">View Message:</label>
+                      <input
+                        type="text"
+                        id="viewMessage"
+                        value={sessionData.viewMessage}
+                        onChange={handleChange}
+                        placeholder="Enter view message"
+                      />
+                    </div>
 
-          <div className="form-group">
-            <label htmlFor="viewMessage">View Message:</label>
-            <input
-              type="text"
-              id="viewMessage"
-              value={sessionData.viewMessage}
-              onChange={handleChange}
-              placeholder="Enter view message"
-            />
-          </div>
-
-          <div className="form-group checkbox">
+                    </div>
+          {/* <div className="form-group checkbox">
             <label htmlFor="status">Session Status:</label>
             <input
               type="checkbox"
@@ -146,11 +154,12 @@ export default function Admin_Manage() {
               onChange={handleChange}
             />
             <span>{sessionData.status ? "Active" : "Inactive"}</span>
-          </div>
+          </div> */}
 
-          <div className="form-actions">
+          <div className="form-actions  grid">
             <button type="submit">Update Session</button>
           </div>
+</div>
         </form>
       </section>
     </main>
