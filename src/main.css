@@ -7,6 +7,9 @@
 :root {
     --mainColor: #07a997;
     --bgColor: #e7f2f1;
+    --footerlight:#3d4452;
+    --footerdark:#333643;
+
 }
 
 html {
@@ -26,12 +29,20 @@ body {
     align-items: center;
     gap: 2rem;
 }
-
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
 .grid-two{
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(2, 1fr);
     /* gap: 2rem; */
+}
+.left .right{
+    width: 49%;
 }
 button {
     background: var(--mainColor);
@@ -57,7 +68,7 @@ button:hover {
 
 
 nav {
-    /* background-color: #ffffff; */
+    background-color: var(--bgColor);
     display: flex ;
     justify-content: center;
     align-items: center;
@@ -71,6 +82,12 @@ nav .content {
     width: 100%;
     max-width: 120rem;
 }
+.content{
+    margin: 0 auto;
+    min-width:80vw ;
+    max-width: 120rem;
+}
+
 
 ul, li, a {
     display: flex;
@@ -108,12 +125,75 @@ Nav .active{
     
    
 }
-
-
-
-img{
+.logo img{
     height: 10rem;
 }
+
+
+
+
+/* ========hero======= */
+
+.hero{
+    /* height: 100vh; */
+    padding: 5rem 0 0 0;
+    background: rgb(251, 255, 253);
+   
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hero_text h1{
+font-size: 7rem;
+}
+
+.hero_img img{
+ 
+    align-items: self-end;
+    height:80rem;
+}
+
+/* hero second */
+
+.hero-second{
+    background: var(--bgColor);
+}
+
+.grid-four{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.hero-second .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 18rem;
+}
+.box_icon {
+    height: 4rem;
+    width: 4rem;
+    color: white;
+    border-radius: 50%;
+  
+    background: var(--mainColor);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---book---- */
 
@@ -171,4 +251,25 @@ form input:focus{
     margin: 0 auto;
     padding: 2rem;
     /* color: red; */
+}
+
+
+/* footer  */
+
+footer{
+    color: white;
+
+background-color: var(--footerlight);
+}
+
+ footer .copywright p{
+    background-color: var(--footerdark);
+    
+}
+.grid_three{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    
+    
+    
 }

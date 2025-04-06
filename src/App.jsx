@@ -13,7 +13,8 @@ return (
         <nav>
             <div className="content">
                 <div className="logo">
-                    <img src="./image/logo.png" alt="" />
+
+                    <img src="/image/Dr1.png" alt="" />
                     {/* <h1>Doctor Appointment</h1> */}
                 </div>
                 <ul>
@@ -22,7 +23,7 @@ return (
                     <li><NavLink to="/view">View List</NavLink></li>
                 </ul>
 
-                <button className='button' onClick={()=> navigate("/admin")} >Addmin log IN</button>
+                <button className='button' onClick={()=> navigate("/admin")} >Admin log IN</button>
             </div>
         </nav>
 

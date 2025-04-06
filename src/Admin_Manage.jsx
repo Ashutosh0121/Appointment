@@ -1,46 +1,63 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-
 export default function Admin_Manage() {
-  const [startTime, setStartTime] = useState("");
-  const [endTime, setEndTime] = useState("");
-  const [bookingMessage, setBookingMessage] = useState("");
-  const [viewMessage, setViewMessage] = useState("");
-  const [status, setStatus] = useState(false);
-  const [bookStartTime, setBookStartTime] = useState("");
-  const [bookEndTime, setBookEndTime] = useState("");
+  const [sessionData, setSessionData] = useState({
+    startTime: "",
+    endTime: "",
+    bookingMessage: "",
+    viewMessage: "",
+    status: false,
+    bookStartTime: "",
+    bookEndTime: ""
+  });
 
   const fetchData = () => {
     axios.get("https://67e6b92e6530dbd311114010.mockapi.io/data/meta_data/1")
       .then((res) => {
         const data = res.data;
-        setStartTime(data.start_Time);
-        setEndTime(data.end_Time);
-        setBookingMessage(data.booking_Message);
-        setViewMessage(data.viwe_Message);
-        setStatus(data.Status);
-        setBookStartTime(data.Book_start_time);
-        setBookEndTime(data.Book_end_time);
-      });
+        setSessionData({
+          startTime: data.start_Time || "",
+          endTime: data.end_Time || "",
+          bookingMessage: data.booking_Message || "",
+          viewMessage: data.viwe_Message || "",
+          status: data.Status || false,
+          bookStartTime: data.Book_start_time || "",
+          bookEndTime: data.Book_end_time || ""
+        });
+      })
+      .catch((err) => console.error("Error fetching data:", err));
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
+  const handleChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setSessionData(prev => ({
+      ...prev,
+      [id]: type === "checkbox" ? checked : value
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.put("https://67e6b92e6530dbd311114010.mockapi.io/data/meta_data/1", {
-      start_Time: startTime,
-      end_Time: endTime,
-      booking_Message: bookingMessage,
-      viwe_Message: viewMessage,
-      Status: status,
-      Book_start_time: bookStartTime,
-      Book_end_time: bookEndTime
-    }).then(() => {
+      start_Time: sessionData.startTime,
+      end_Time: sessionData.endTime,
+      booking_Message: sessionData.bookingMessage,
+      viwe_Message: sessionData.viewMessage,
+      Status: sessionData.status,
+      Book_start_time: sessionData.bookStartTime,
+      Book_end_time: sessionData.bookEndTime
+    })
+    .then(() => {
       alert("Session data updated successfully!");
+    })
+    .catch((err) => {
+      console.error("Update failed:", err);
+      alert("Failed to update session data.");
     });
   };
 
@@ -58,8 +75,8 @@ export default function Admin_Manage() {
             <input
               type="datetime-local"
               id="startTime"
-              value={startTime}
-              onChange={(e) => setStartTime(e.target.value)}
+              value={sessionData.startTime}
+              onChange={handleChange}
               required
             />
           </div>
@@ -69,8 +86,8 @@ export default function Admin_Manage() {
             <input
               type="datetime-local"
               id="endTime"
-              value={endTime}
-              onChange={(e) => setEndTime(e.target.value)}
+              value={sessionData.endTime}
+              onChange={handleChange}
               required
             />
           </div>
@@ -80,8 +97,8 @@ export default function Admin_Manage() {
             <input
               type="datetime-local"
               id="bookStartTime"
-              value={bookStartTime}
-              onChange={(e) => setBookStartTime(e.target.value)}
+              value={sessionData.bookStartTime}
+              onChange={handleChange}
               required
             />
           </div>
@@ -91,8 +108,8 @@ export default function Admin_Manage() {
             <input
               type="datetime-local"
               id="bookEndTime"
-              value={bookEndTime}
-              onChange={(e) => setBookEndTime(e.target.value)}
+              value={sessionData.bookEndTime}
+              onChange={handleChange}
               required
             />
           </div>
@@ -102,8 +119,8 @@ export default function Admin_Manage() {
             <input
               type="text"
               id="bookingMessage"
-              value={bookingMessage}
-              onChange={(e) => setBookingMessage(e.target.value)}
+              value={sessionData.bookingMessage}
+              onChange={handleChange}
               placeholder="Enter booking message"
               required
             />
@@ -114,8 +131,8 @@ export default function Admin_Manage() {
             <input
               type="text"
               id="viewMessage"
-              value={viewMessage}
-              onChange={(e) => setViewMessage(e.target.value)}
+              value={sessionData.viewMessage}
+              onChange={handleChange}
               placeholder="Enter view message"
             />
           </div>
@@ -125,10 +142,10 @@ export default function Admin_Manage() {
             <input
               type="checkbox"
               id="status"
-              checked={status}
-              onChange={() => setStatus(!status)}
+              checked={sessionData.status}
+              onChange={handleChange}
             />
-            <span>{status ? "Active" : "Inactive"}</span>
+            <span>{sessionData.status ? "Active" : "Inactive"}</span>
           </div>
 
           <div className="form-actions">
