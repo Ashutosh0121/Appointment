@@ -98,7 +98,8 @@ export default function Home() {
             <div>
               <h3>About Us</h3>
               <p>
-                Learn more about our services and mission to provide the best
+                Learn more about our services 
+                and mission to provide the best
                 appointments for your needs.
               </p>
               <p>Facebook | Twitter | Instagram</p>

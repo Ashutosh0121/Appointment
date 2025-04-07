@@ -67,16 +67,14 @@ button:hover {
 
 
 /* ========hero======= */
-
 .hero {
-  /* height: 100vh; */
   padding: 5rem 0 0 0;
   background: rgb(251, 255, 253);
-
   display: grid;
   justify-content: center;
   align-items: center;
 }
+
 .hero_text h1 {
   font-size: 7rem;
 }
@@ -84,27 +82,60 @@ button:hover {
 .hero_img img {
   align-items: self-end;
   height: 80rem;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* hero second */
-
 .hero-second {
   background: var(--bgColor);
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero_text h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .hero_img img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero_text h1 {
+    font-size: 3rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+}
+
 .grid-four {
   display: grid;
+  align-items: center;
+  justify-items: center;
   justify-content: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: 2rem;
+  
 }
 
 .hero-second .box {
   display: flex;
+width: 40rem;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  height: 26rem;
+  padding : 3rem;
+  /* height: 26rem; */
 }
 .box_icon {
   /* height:10rem;
@@ -121,8 +152,11 @@ button:hover {
   
   & h1{
     font-size: 3rem;
+    text-align: left;
   }  
   & p{
+    text-align: left;
+
     font-size:1.4rem;
     line-height: 1.5;
   }
@@ -189,22 +223,29 @@ form input:focus ,select:focus {
 
 /* addmine page css  */
 
- .form_grid {
 
-  
+.form_grid {
   display: grid;
-  /* justify-content: center; */
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
-
-  
-
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
 }
 
-.form-actions{
-  /* grid-area: span 2; */
+.form-actions {
   grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  html{
+    font-size: 50%;
+  }
+  .form_grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-actions {
+    grid-column: span 1;
+  }
 }
 
 
@@ -219,30 +260,33 @@ footer {
 }
 
 footer .grid_three {
+  margin:  0 auto ;
+  max-width: 130rem;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    /* gap: 2rem; */
     padding: 2rem 0;
 }
 
 footer .grid_three div {
-  text-align: center; /* Center-align content */
+  text-align: center; 
+  /* max-width: 30rem; */
+  /* padding: 1rem; */
 }
 
 footer .grid_three h3 {
 
   font-size: 2rem;
   margin: 1rem;
-  color: var(--mainColor); /* Use your main color for headings */
+  color: var(--mainColor); 
 }
 
-footer .grid_three p {
+footer .grid_three p{
   font-size: 1.6rem;
   line-height: 1.5;
-  color: #ccc; /* Light text color for better contrast */
+  color: #ccc; 
 }
-
 footer .copywright {
   text-align: center;
   margin-top: 2rem;
