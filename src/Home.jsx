@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <main>
         <div className="hero grid ">
-          <div className=" content flex">
+          <div className=" content flex ">
             <div className="hero_text ">
               <h1>Book Your Appointment</h1>
               <p>

@@ -32,9 +32,9 @@ export default function Book() {
       <>
       <section>
         <div className="content book ">
-        <div className=" bookbox">
+        <div className=" bookbox content ">
           <div className="box grid grid-two">
-          <div className="img">
+          <div className="img grid">
             <img src="./image/Dr1.png" alt="" />
           </div>
           <div className="form" >

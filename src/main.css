@@ -44,8 +44,10 @@ body {
 }
 .grid-two {
   display: grid;
+  /* grid-template-rows: 1fr   ; */
+  grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
   justify-content: center;
-  grid-template-columns: repeat(2, 1fr);
+  
   /* gap: 2rem; */
 }
 .left .right {
@@ -102,32 +104,7 @@ button:hover {
   background: var(--bgColor);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero_text h1 {
-    font-size: 4rem;
-    text-align: center;
-  }
 
-  .hero_img img {
-    height: auto;
-    max-width: 100%;
-  }
-
-  .hero {
-    padding: 3rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero_text h1 {
-    font-size: 3rem;
-  }
-
-  .hero {
-    padding: 2rem 1rem;
-  }
-}
 
 .grid-four {
   display: grid;
@@ -185,8 +162,9 @@ width: 40rem;
 }
 .bookbox .box {
   background: #fff;
-  height: 50rem;
-  width: 110rem;
+  /* height: 50rem;
+  width: 110rem; */
+  margin: 2rem;
   border-radius: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.901);
   overflow: hidden;
@@ -197,7 +175,7 @@ width: 40rem;
 }
 .bookbox .img img {
   height: 100%;
-  width: 100%;
+  max-width: 100%;
   object-fit: cover;
 }
 
