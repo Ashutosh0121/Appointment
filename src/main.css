@@ -16,6 +16,14 @@ html {
   font-family: Arial, sans-serif;
 }
 
+@media (max-width: 768px){
+
+  html{
+    font-size: 56%;
+  } 
+  }
+
+
 body {
   /* background-color: var(--bgColor); */
   color: #333;
@@ -63,6 +71,9 @@ button:hover {
   color: #e7f2f1;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: translateY(-3px);
+}
+.hidden {
+  display: none;
 }
 
 
@@ -225,28 +236,25 @@ form input:focus ,select:focus {
 
 
 .form_grid {
+  width: 80vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: 2rem;
 }
 
-.form-actions {
-  grid-column: span 2;
+
+#button_hide{
+background-color: #828282;
+color: rgb(240, 240, 240);
+height:3rem;
+display: grid;
+align-items: center;
+align-content: center;
 }
 
-@media (max-width: 768px) {
-  html{
-    font-size: 50%;
-  }
-  .form_grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
 
-  .form-actions {
-    grid-column: span 1;
-  }
-}
+
+
 
 
 
