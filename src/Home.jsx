@@ -1,12 +1,13 @@
 import React from "react";
 import { CiHospital1 } from "react-icons/ci";
+import dr_img from "./asset/Dr1.webp";
 
 export default function Home() {
   return (
     <>
-      <main>
-        <div className="hero grid ">
-          <div className=" content flex ">
+      <main className="content">
+        <div className="hero   grid ">
+          <div className=" content grid  grid-two">
             <div className="hero_text ">
               <h1>Book Your Appointment</h1>
               <p>
@@ -17,7 +18,7 @@ export default function Home() {
             </div>
             <div className="hero_img grid ">
               <img
-                src="https://png.pngtree.com/png-vector/20240205/ourmid/pngtree-professional-doctor-with-order-png-image_11626748.png"
+                src={dr_img}
                 alt=""
               />
             </div>

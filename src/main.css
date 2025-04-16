@@ -16,14 +16,6 @@ html {
   font-family: Arial, sans-serif;
 }
 
-@media (max-width: 768px){
-
-  html{
-    font-size: 56%;
-  } 
-  }
-
-
 body {
   /* background-color: var(--bgColor); */
   color: #333;
@@ -47,7 +39,7 @@ body {
   /* grid-template-rows: 1fr   ; */
   grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
   justify-content: center;
-  
+
   /* gap: 2rem; */
 }
 .left .right {
@@ -78,7 +70,6 @@ button:hover {
   display: none;
 }
 
-
 /* ========hero======= */
 .hero {
   padding: 5rem 0 0 0;
@@ -104,8 +95,6 @@ button:hover {
   background: var(--bgColor);
 }
 
-
-
 .grid-four {
   display: grid;
   align-items: center;
@@ -113,16 +102,15 @@ button:hover {
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   gap: 2rem;
-  
 }
 
 .hero-second .box {
   display: flex;
-width: 40rem;
+  width: 40rem;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding : 3rem;
+  padding: 3rem;
   /* height: 26rem; */
 }
 .box_icon {
@@ -134,22 +122,19 @@ width: 40rem;
   border-radius: 50%;
 
   background: var(--mainColor);
-
 }
 .hero-second .text {
-  
-  & h1{
+  & h1 {
     font-size: 3rem;
     text-align: left;
-  }  
-  & p{
+  }
+  & p {
     text-align: left;
 
-    font-size:1.4rem;
+    font-size: 1.4rem;
     line-height: 1.5;
   }
 }
-
 
 /* ---book---- */
 
@@ -187,17 +172,19 @@ form {
   gap: 2rem;
   padding: 2rem;
 }
-form input ,select{
+form input,
+select {
   width: 100%;
   padding: 1rem;
-  color:rgb(118, 116, 116);
+  color: rgb(118, 116, 116);
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   font-size: 1.6rem;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
-form input:focus ,select:focus {
+form input:focus,
+select:focus {
   border: 1px solid var(--mainColor);
   box-shadow: 0 0 5px rgba(7, 169, 151, 0.5);
 }
@@ -209,9 +196,7 @@ form input:focus ,select:focus {
   /* color: red; */
 }
 
-
 /* addmine page css  */
-
 
 .form_grid {
   width: 80vw;
@@ -220,22 +205,14 @@ form input:focus ,select:focus {
   gap: 2rem;
 }
 
-
-#button_hide{
-background-color: #828282;
-color: rgb(240, 240, 240);
-height:3rem;
-display: grid;
-align-items: center;
-align-content: center;
+#button_hide {
+  background-color: #828282;
+  color: rgb(240, 240, 240);
+  height: 3rem;
+  display: grid;
+  align-items: center;
+  align-content: center;
 }
-
-
-
-
-
-
-
 
 /* footer  */
 
@@ -246,32 +223,31 @@ footer {
 }
 
 footer .grid_three {
-  margin:  0 auto ;
+  margin: 0 auto;
   max-width: 130rem;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    /* gap: 2rem; */
-    padding: 2rem 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  /* gap: 2rem; */
+  padding: 2rem 0;
 }
 
 footer .grid_three div {
-  text-align: center; 
+  text-align: center;
   /* max-width: 30rem; */
   /* padding: 1rem; */
 }
 
 footer .grid_three h3 {
-
   font-size: 2rem;
   margin: 1rem;
-  color: var(--mainColor); 
+  color: var(--mainColor);
 }
 
-footer .grid_three p{
+footer .grid_three p {
   font-size: 1.6rem;
   line-height: 1.5;
-  color: #ccc; 
+  color: #ccc;
 }
 footer .copywright {
   text-align: center;
@@ -284,4 +260,71 @@ footer .copywright {
 
 footer .copywright p {
   background-color: var(--footerdark);
+}
+
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 56%;
+  }
+
+}
+
+
+@media (max-width: 1140px) {
+  .hero .grid-two{
+    grid-template-columns: 1fr;
+    
+    & .hero_img{
+      order:1;
+      
+      & img{
+        height: 60rem;
+        /* width: 95vw; */
+      }
+    }
+    & .hero_text{
+      order:2;
+      margin: 0 3rem ;
+      margin-bottom: 2rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero .grid-two .hero_img img {
+    height: 40rem;
+    /* width: 100%; */
+    
+  }
+  .hero .grid-two .hero_text h1 {
+    font-size: 5rem;
+    line-height: 1.2;
+  }
+
+  .bookbox .box {
+ & .img img{
+    height: 30rem;
+    width: 100%;
+  }
+  }
+  .bookbox .box {
+    & .text {
+      padding: 2rem;
+      text-align: center;
+      font-size: 1.6rem;
+    }
+  }
+  .hero-second .grid-four {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1rem;
+    & .box {
+      width: 30rem;
+      padding: 2rem;
+ }
+  }
+
 }

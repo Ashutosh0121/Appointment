@@ -29,15 +29,22 @@ export default function Nav() {
               <NavLink to="/view">View List</NavLink>
             </li>
           </ul>
-          <button className="button" onClick={() => navigate("/admin")}>
+          <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+            <li>
+          <button  className="button" onClick={() => navigate("/admin")}>
             Admin Login
           </button>
+              
+            </li>
+          </ul>
         </div>
 
         <div className="hamburger" onClick={toggleMenu}>
           <div className={`bar ${isOpen ? "open" : ""}`}></div>
           <div className={`bar ${isOpen ? "open" : ""}`}></div>
           <div className={`bar ${isOpen ? "open" : ""}`}></div>
+          <div className={`bar ${isOpen ? "open" : ""}`}></div>
+
         </div>
       </div>
     </nav>

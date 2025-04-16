@@ -57,12 +57,13 @@ export default function View() {
     <div className="view-container">
       <h2>Appointment View</h2>
 
-      <p className="current-time">
-        <strong>Current Time:</strong> {currentTime}
-      </p>
 
       <p className="meta-message">
         {metaData.viwe_Message || "No additional information available."}
+      </p>
+
+      <p className="current-time">
+        <strong>Time:</strong> {currentTime}
       </p>
 
       <div className="table-container">
